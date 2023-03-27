@@ -1,0 +1,31 @@
+{
+    "name": "oscar-team/customerio-laravel",
+    "description": "Package will be used to create customers and events on Customer.io using Laravel",
+    "type": "library",
+    "homepage": "https://github.com/oscar-team/CustomerioLaravel",
+    "license": "MIT",
+    "require": {
+        "printu/customerio": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oscar\\CustomerioLaravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Oscar\\CustomerioLaravel\\CustomerioServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Adnan Shoukat",
+            "email": "babarmalik6444@gmail.com",
+            "role": "Full Stack Developer",
+            "homepage": "https://github.com/babarmalik6444"
+        }
+    ]
+}
