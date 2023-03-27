@@ -5,6 +5,7 @@
     "homepage": "https://github.com/oscar-team/CustomerioLaravel",
     "license": "MIT",
     "require": {
+        "php": ">=8.0",
         "printu/customerio": "^3.5"
     },
     "autoload": {
