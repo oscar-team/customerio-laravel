@@ -2,7 +2,7 @@
     "name": "oscar-team/customerio-laravel",
     "description": "Package will be used to create customers and events on Customer.io using Laravel",
     "type": "library",
-    "homepage": "https://github.com/oscar-team/CustomerioLaravel",
+    "homepage": "https://github.com/oscar-team/customerio-laravel",
     "license": "MIT",
     "require": {
         "php": ">=8.0",
