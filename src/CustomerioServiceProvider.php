@@ -4,7 +4,7 @@ namespace Oscar\CustomerioLaravel;
 
 use Illuminate\Support\ServiceProvider;
 
-class CustomerioServiceProvider extends ServicePro {
+class CustomerioServiceProvider extends ServiceProvider {
 
     public function boot(): void
     {
