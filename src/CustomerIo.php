@@ -53,6 +53,14 @@ class CustomerIo extends Base
      */
     public function updateCustomer(array $customer)
     {
+        if (array_key_exists('total_spend', $customer)) {
+            unset($customer['total_spend']);
+        }
+
+        if (array_key_exists('number_of_bookings', $customer)) {
+            unset($customer['number_of_bookings']);
+        }
+
         $response = $this->client->customers->update($customer);
 
         return $response;
