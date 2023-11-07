@@ -1,4 +1,5 @@
 <?php
+
 return [
     /*
     |----------------------------------------------------------------------
@@ -30,4 +31,14 @@ return [
     */
     'app_api_key' => env('CUSTOMER_IO_APP_API_KEY', null),
 
+    /*
+    |----------------------------------------------------------------------
+    | WORKSPACES DEFINITION
+    |----------------------------------------------------------------------
+    |
+    | Here we can define multiple workspaces that you want to connect
+    | and then you can choose between them
+    |
+    */
+    'workspaces' => [],
 ];

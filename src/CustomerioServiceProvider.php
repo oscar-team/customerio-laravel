@@ -4,8 +4,8 @@ namespace Oscar\CustomerioLaravel;
 
 use Illuminate\Support\ServiceProvider;
 
-class CustomerioServiceProvider extends ServiceProvider {
-
+class CustomerioServiceProvider extends ServiceProvider
+{
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
@@ -16,12 +16,8 @@ class CustomerioServiceProvider extends ServiceProvider {
         }
     }
 
-    public function register():void
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/customerio.php', 'customerio');
     }
-
 }
-
-
-?>

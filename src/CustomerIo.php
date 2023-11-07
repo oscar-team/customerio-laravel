@@ -1,7 +1,8 @@
 <?php
-namespace Oscar\CustomerioLaravel;
-use Oscar\CustomerioLaravel\Base;
 
+namespace Oscar\CustomerioLaravel;
+
+use Oscar\CustomerioLaravel\Base;
 
 /**
  * The CustomerIo class is a wrapper for the Customer.io API that provides a set of
@@ -25,7 +26,7 @@ class CustomerIo extends Base
      */
     public function searchCustomerByEmail(string $email): bool
     {
-        $response = $this->client->customers->get([
+        $response = $this->getCurrentClient()->customers->get([
             'email' => $email,
         ]);
 
@@ -40,7 +41,7 @@ class CustomerIo extends Base
      */
     public function addCustomer(array $customer)
     {
-        $response = $this->client->customers->add($customer);
+        $response = $this->getCurrentClient()->customers->add($customer);
 
         return $response;
     }
@@ -61,7 +62,7 @@ class CustomerIo extends Base
             unset($customer['number_of_bookings']);
         }
 
-        $response = $this->client->customers->update($customer);
+        $response = $this->getCurrentClient()->customers->update($customer);
 
         return $response;
     }
@@ -74,7 +75,7 @@ class CustomerIo extends Base
      */
     public function deleteCustomer(int $id)
     {
-        $response = $this->client->customers->delete([
+        $response = $this->getCurrentClient()->customers->delete([
             'id' => $id,
         ]);
 
@@ -89,11 +90,8 @@ class CustomerIo extends Base
      */
     public function createEvent(array $data)
     {
-        $response = $this->client->customers->event($data);
+        $response = $this->getCurrentClient()->customers->event($data);
 
         return $response;
     }
 }
-
-
-?>
