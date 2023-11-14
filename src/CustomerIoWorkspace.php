@@ -2,20 +2,28 @@
 
 namespace Oscar\CustomerioLaravel;
 
-use Oscar\CustomerioLaravel\Base;
+use Customerio\Client;
 
 /**
  * The CustomerIo class is a wrapper for the Customer.io API that provides a set of
  * methods for managing customers and events.
  */
-class CustomerIo extends Base
+class CustomerIoWorkspace
 {
     /**
-     * Create a new instance of the CustomerIo class.
+     * The client object used for making API calls.
+     *
+     * @var Client
      */
-    public function __construct()
+    protected Client $client;
+
+    /**
+     * Create a new instance of Base class and initialize the client object.
+     */
+    public function __construct(string $apiKey, string $siteId, string $appApiKey)
     {
-        parent::__construct();
+        $this->client = new Client($apiKey, $siteId);
+        $this->client->setAppAPIKey($appApiKey);
     }
 
     /**
@@ -26,7 +34,7 @@ class CustomerIo extends Base
      */
     public function searchCustomerByEmail(string $email): bool
     {
-        $response = $this->getCurrentClient()->customers->get([
+        $response = $this->client->customers->get([
             'email' => $email,
         ]);
 
@@ -41,7 +49,7 @@ class CustomerIo extends Base
      */
     public function addCustomer(array $customer)
     {
-        $response = $this->getCurrentClient()->customers->add($customer);
+        $response = $this->client->customers->add($customer);
 
         return $response;
     }
@@ -62,7 +70,7 @@ class CustomerIo extends Base
             unset($customer['number_of_bookings']);
         }
 
-        $response = $this->getCurrentClient()->customers->update($customer);
+        $response = $this->client->customers->update($customer);
 
         return $response;
     }
@@ -75,7 +83,7 @@ class CustomerIo extends Base
      */
     public function deleteCustomer(int $id)
     {
-        $response = $this->getCurrentClient()->customers->delete([
+        $response = $this->client->customers->delete([
             'id' => $id,
         ]);
 
@@ -90,7 +98,7 @@ class CustomerIo extends Base
      */
     public function createEvent(array $data)
     {
-        $response = $this->getCurrentClient()->customers->event($data);
+        $response = $this->client->customers->event($data);
 
         return $response;
     }
