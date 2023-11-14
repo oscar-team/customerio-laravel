@@ -48,7 +48,7 @@ class CustomerIoManager
         // provided in the application. Once we've created the connections we will
         // set the "fetch mode" for PDO which determines the query return types.
         if (!isset($this->workspaces[$name])) {
-            $this->workspaces[$name] = $this->makeConnection($database);
+            $this->workspaces[$name] = $this->makeConnection($name);
         }
 
         return $this->workspaces[$name];
