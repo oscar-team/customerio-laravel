@@ -1,20 +1,29 @@
 <?php
-namespace Oscar\CustomerioLaravel;
-use Oscar\CustomerioLaravel\Base;
 
+namespace Oscar\CustomerioLaravel;
+
+use Customerio\Client;
 
 /**
  * The CustomerIo class is a wrapper for the Customer.io API that provides a set of
  * methods for managing customers and events.
  */
-class CustomerIo extends Base
+class CustomerIoWorkspace
 {
     /**
-     * Create a new instance of the CustomerIo class.
+     * The client object used for making API calls.
+     *
+     * @var Client
      */
-    public function __construct()
+    protected Client $client;
+
+    /**
+     * Create a new instance of Base class and initialize the client object.
+     */
+    public function __construct(string $apiKey, string $siteId, string $appApiKey)
     {
-        parent::__construct();
+        $this->client = new Client($apiKey, $siteId);
+        $this->client->setAppAPIKey($appApiKey);
     }
 
     /**
@@ -94,6 +103,3 @@ class CustomerIo extends Base
         return $response;
     }
 }
-
-
-?>
