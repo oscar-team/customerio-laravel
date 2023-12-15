@@ -2,6 +2,8 @@
 
 namespace Oscar\CustomerioLaravel;
 
+use Illuminate\Support\Arr;
+
 /**
  * Customer.io workspace manager
  */
