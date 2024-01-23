@@ -25,7 +25,7 @@ If you want to setup more workspaces to connect to, then you need to copy the ad
 Each workspace needs to have these 3 keys: `api_key`, `app_api_key`, `site_id`.
 
 ### Usage 
-Include `use Oscar\CustomerioLaravel\Facade\CustomerIo;` in your `controller` and add following function.
+Include `use Oscar\CustomerioLaravel\Facades\CustomerIo;` in your `controller` and add following function.
 
 #### Create customer.io object 
 ```php
