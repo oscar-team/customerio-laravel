@@ -42,7 +42,7 @@ class CustomerIoManager
      *
      * @return \Oscar\CustomerioLaravel\CustomerIoWorkspace
      */
-    public function workspace(string$name = null)
+    public function workspace(string $name = null)
     {
         $name = $name ?: $this->getDefaultWorkspaceConnection();
 
@@ -128,7 +128,7 @@ class CustomerIoManager
      */
     protected function configuration($name)
     {
-        $name = $name ?: $this->getDefaultConnection();
+        $name = $name ?: $this->getDefaultWorkspaceConnection();
 
         // To get the workspace connection configuration, we will just pull each of the
         // connection configurations and get the configurations for the given name.

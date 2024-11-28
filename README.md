@@ -77,4 +77,22 @@ $eventData = [
 $customerIo->createEvent($eventData);
 ```
 
+#### Send email
+```php
+$emailData = [
+    'transactional_message_id' => 123, // can also be a string depending how the template is configured in Customer.io
+    'identifiers' => [ // you need to send only one of these, depending which one you want and use in Customer.io
+        'id' => 'your_own_custom_id_in_cio',
+        'email' => 'demo@test.com',
+        'cio_id' => 'customer_id_generated_by_cio',
+    ],
+    'to' => '\"Destination Person\" <destination-person@example.com>',
+    'body' => '<p>This is my test email</p>', // required if 'transactional_message_id' is not provided; will override the body of the template if both are passed
+    'subject' => 'Subject for my test email', // required if 'transactional_message_id' is not provided; will override the subject of the template if both are passed
+    'from' => '\"Sender Person\" <sender-person@example.com>', // required if 'transactional_message_id' is not provided; will override the from of the template if both are passed
+    'message_data' => [
+        '<parameterName>' => '<parameterValue>' // key-value pair for each parameter you have in the template. replaced `<parameterName>` with the actual name of the parameter and `<parameterValue>` with the actual value of the parameter
+    ],
+];
+```
 

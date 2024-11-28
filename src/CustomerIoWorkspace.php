@@ -102,4 +102,18 @@ class CustomerIoWorkspace
 
         return $response;
     }
+
+    /**
+     * Send an email through transaction API
+     *
+     * @param  array $data An array of options for the API
+     *
+     * @return mixed
+     */
+    public function sendEmail(array $data)
+    {
+        $response = $this->client->send->email($data);
+
+        return $response;
+    }
 }
