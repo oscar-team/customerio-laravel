@@ -2,7 +2,7 @@
 
 namespace Oscar\CustomerioLaravel;
 
-use Customerio\Client;
+use Oscar\CustomerioLaravel\Customerio\Client;
 
 /**
  * The CustomerIo class is a wrapper for the Customer.io API that provides a set of
@@ -115,5 +115,10 @@ class CustomerIoWorkspace
         $response = $this->client->send->email($data);
 
         return $response;
+    }
+
+    public function submitForm(array $data): mixed
+    {
+        return $this->client->forms->submit($data);
     }
 }
