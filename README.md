@@ -94,5 +94,6 @@ $emailData = [
         '<parameterName>' => '<parameterValue>' // key-value pair for each parameter you have in the template. replaced `<parameterName>` with the actual name of the parameter and `<parameterValue>` with the actual value of the parameter
     ],
 ];
+$customerIo->sendEmail($emailData);
 ```
 

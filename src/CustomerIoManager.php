@@ -42,7 +42,7 @@ class CustomerIoManager
      *
      * @return \Oscar\CustomerioLaravel\CustomerIoWorkspace
      */
-    public function workspace(string $name = null)
+    public function workspace(?string $name = null)
     {
         $name = $name ?: $this->getDefaultWorkspaceConnection();
 
